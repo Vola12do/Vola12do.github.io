@@ -1,61 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   VISHWASH TANK // VOLA12DO — INDUSTRIAL FIELD CONSOLE DESIGN SYSTEM
-   References: teenage.engineering · in.nothing.tech · dontlookup.app · huyml.co
-   Zero AI-slop. Exposed 1px structural grids, dot-matrix telemetry, tactile UI.
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-:root,
-html[data-theme="dark"] {
-  --bg:            #0a0b0d;
-  --panel:         #101216;
-  --panel-alt:     #15181e;
-  --panel-hover:   #1a1e26;
-  --line:          #242832;
-  --line-strong:   #383e4c;
-  --text:          #f2f0ea;
-  --text-sub:      #a2a8b4;
-  --text-muted:    #676e7b;
-  --signal:        #ff5500;
-  --signal-soft:   rgba(255, 85, 0, 0.12);
-  --nothing-red:   #d71921;
-  --ok:            #22c55e;
-  --ok-soft:       rgba(34, 197, 94, 0.12);
-  --cyan:          #38bdf8;
-  --amber:         #f59e0b;
-  --dot-off:       #1d212a;
-  --dot-on:        #ff5500;
-  --shadow-hard:   4px 4px 0px #000000;
-}
-
-html[data-theme="light"] {
-  --bg:            #f0eee6;
-  --panel:         #f9f8f3;
-  --panel-alt:     #e6e3d8;
-  --panel-hover:   #dedad0;
-  --line:          #c8c4b7;
-  --line-strong:   #141619;
-  --text:          #111317;
-  --text-sub:      #3d424d;
-  --text-muted:    #6c717d;
-  --signal:        #ff4800;
-  --signal-soft:   rgba(255, 72, 0, 0.10);
-  --nothing-red:   #c81018;
-  --ok:            #15803d;
-  --ok-soft:       rgba(21, 128, 61, 0.10);
-  --cyan:          #0284c7;
-  --amber:         #b45309;
-  --dot-off:       #d5d1c5;
-  --dot-on:        #ff4800;
-  --shadow-hard:   4px 4px 0px #c8c4b7;
-}
+/* ==========================================================================
+   VISHWASH TANK (@VOLA12DO) — MINIMALIST CHROMATIC EDITORIAL SYSTEM
+   Inspired by Huy Phan (https://huyml.co/)
+   Gallery-grade #ECECEC canvas · 16-column architectural grid · 12px Grotesque
+   Editorial Display Serif · 23x23 Chromatic Triads · Ruler Index
+   ========================================================================== */
 
 :root {
-  --font-display: 'Antonio', 'Arial Narrow', sans-serif;
-  --font-sans:    'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono:    'IBM Plex Mono', monospace;
-  --max-w:        1260px;
+  /* Core HuyML Canvas Tokens */
+  --bg: #ececec;
+  --bg-soft: #e4e4e4;
+  --bg-elevated: #f5f5f5;
+  --ink: #171717;
+  --ink-muted: rgba(23, 23, 23, 0.48);
+  --ink-subtle: rgba(23, 23, 23, 0.28);
+  --hairline: rgba(23, 23, 23, 0.11);
+  --hairline-strong: rgba(23, 23, 23, 0.24);
+
+  /* Dynamic Chromatic Tokens (Updated live per active work item) */
+  --chroma-1: #171717;
+  --chroma-2: #d8d4cb;
+  --chroma-3: #ff5a36;
+  --chroma-ambient: rgba(255, 90, 54, 0.09);
+
+  /* Contact Drawer (HuyML signature dark frosted sheet) */
+  --drawer-bg: rgba(23, 23, 23, 0.96);
+  --drawer-ink: #ffffff;
+  --drawer-muted: rgba(255, 255, 255, 0.5);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-theme="dark"] {
+  --bg: #111111;
+  --bg-soft: #181818;
+  --bg-elevated: #1d1d1d;
+  --ink: #f2f2f2;
+  --ink-muted: rgba(242, 242, 242, 0.5);
+  --ink-subtle: rgba(242, 242, 242, 0.26);
+  --hairline: rgba(242, 242, 242, 0.11);
+  --hairline-strong: rgba(242, 242, 242, 0.26);
 }
 
 *, *::before, *::after {
@@ -65,1052 +54,1048 @@ html[data-theme="light"] {
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
-  background: var(--bg);
-  color: var(--text);
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
   font-family: var(--font-sans);
-  line-height: 1.6;
-  min-height: 100vh;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  background-color: var(--bg);
+  color: var(--ink);
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(var(--line) 1px, transparent 1px);
-  background-size: 24px 24px;
-  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.16s ease;
+  transition: background-color 480ms var(--ease-out), color 320ms var(--ease-out);
+  position: relative;
 }
 
-body.is-fading { opacity: 0; }
-
-::selection {
-  background: var(--signal);
-  color: #fff;
+/* Subtle ambient chromatic wash that shifts smoothly as you browse work */
+.chromatic-wash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(65% 55% at 78% 28%, var(--chroma-ambient), transparent 70%),
+    radial-gradient(50% 45% at 20% 80%, rgba(0, 0, 0, 0.02), transparent 70%);
+  transition: background 600ms var(--ease-out);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: opacity 200ms ease, color 200ms ease;
 }
 
-/* ── TOP HARDWARE TELEMETRY BAR ─────────────────────────────────────────── */
-.top-telemetry {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
+a:hover {
+  opacity: 0.65;
 }
 
-.telemetry-strip {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 6px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.telemetry-strip .status-cluster {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.led-dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--ok);
-  box-shadow: 0 0 8px var(--ok);
-  animation: pulseLed 2s infinite ease-in-out;
-}
-
-.led-dot.orange {
-  background: var(--signal);
-  box-shadow: 0 0 8px var(--signal);
-}
-
-@keyframes pulseLed {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-/* ── MAIN NAVIGATION DECK ───────────────────────────────────────────────── */
-.nav-deck {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 62px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand-unit {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-mono);
-}
-
-.brand-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  background: var(--signal);
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  border: 1px solid var(--text);
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.brand-text strong {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: var(--text);
-}
-
-.brand-text small {
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  color: var(--text-muted);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 4px;
-}
-
-.nav-links a {
-  padding: 8px 12px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-sub);
-  border: 1px solid transparent;
-  transition: all 0.15s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--text);
-  background: var(--panel);
-  border-color: var(--line);
-}
-
-.nav-links a .idx {
-  color: var(--signal);
-  margin-right: 4px;
-  font-size: 9px;
-}
-
-.nav-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hw-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  height: 36px;
-  padding: 0 13px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: var(--panel);
-  color: var(--text);
-  border: 1px solid var(--line);
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: transform 0.1s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
-.hw-btn:hover {
-  border-color: var(--signal);
-  background: var(--panel-hover);
-}
-
-.hw-btn:active {
-  transform: translateY(1px);
-}
-
-.hw-btn.primary {
-  background: var(--signal);
-  color: #fff;
-  border-color: var(--signal);
-}
-
-.hw-btn.primary:hover {
-  background: #e04800;
-}
-
-/* ── STRUCTURAL CHASSIS CONTAINER ───────────────────────────────────────── */
-.chassis {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 24px 80px;
-}
-
-.module-frame {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  margin-top: 28px;
-  position: relative;
-}
-
-.module-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 18px;
-  background: var(--panel-alt);
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.module-bar .mod-code {
-  color: var(--signal);
-  font-weight: 600;
-}
-
-/* ── HERO INSTRUMENT DECK ───────────────────────────────────────────────── */
-.hero-grid {
+/* ==========================================================================
+   16-COLUMN ARCHITECTURAL GRID (HuyML Layout Engine)
+   ========================================================================== */
+.grid-16 {
   display: grid;
-  grid-template-columns: 1.35fr 0.95fr;
-  border-bottom: 1px solid var(--line);
-}
-
-.hero-left {
-  padding: 44px 38px;
-  border-right: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--signal);
-  margin-bottom: 18px;
-}
-
-.hero-eyebrow::before {
-  content: "";
-  width: 24px;
-  height: 2px;
-  background: var(--signal);
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(3.4rem, 7vw, 6.2rem);
-  font-weight: 700;
-  line-height: 0.94;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: var(--text);
-  margin-bottom: 22px;
-}
-
-.hero-title .stroke-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--signal);
-  border: 1px solid var(--signal);
-  padding: 4px 10px;
-  vertical-align: middle;
-  margin-left: 10px;
-  background: var(--signal-soft);
-}
-
-.hero-lead {
-  font-size: 15px;
-  color: var(--text-sub);
-  max-width: 610px;
-  line-height: 1.75;
-  border-left: 3px solid var(--signal);
-  padding-left: 16px;
-  margin-bottom: 28px;
-}
-
-.hero-lead strong {
-  color: var(--text);
-  font-weight: 600;
-}
-
-.hero-cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
-}
-
-.hero-cta-row .hw-btn {
-  height: 44px;
-  padding: 0 18px;
-  font-size: 11px;
-}
-
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.spec-pill {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  background: var(--panel-alt);
-  border: 1px solid var(--line);
-  color: var(--text-sub);
-}
-
-.spec-pill b {
-  color: var(--signal);
-}
-
-/* ── HERO RIGHT: NOTHING DOT-MATRIX & RUST STRUCT BIO ───────────────────── */
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg);
-}
-
-.dot-matrix-bay {
-  padding: 22px 24px;
-  border-bottom: 1px solid var(--line);
-  background: var(--panel);
-}
-
-.bay-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.dot-matrix-canvas {
-  display: grid;
-  grid-template-columns: repeat(28, 1fr);
-  gap: 4px;
-  padding: 14px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  user-select: none;
-}
-
-.dm-cell {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--dot-off);
-  transition: background-color 0.12s ease, box-shadow 0.12s ease;
-}
-
-.dm-cell.on {
-  background: var(--dot-on);
-  box-shadow: 0 0 6px var(--dot-on);
-}
-
-.dm-cell.green {
-  background: var(--ok);
-  box-shadow: 0 0 6px var(--ok);
-}
-
-.rust-bio-panel {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.rust-bio-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 9px 18px;
-  background: var(--panel-alt);
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--text-muted);
-}
-
-.rust-bio-body {
-  padding: 18px 20px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  line-height: 1.75;
-  overflow-x: auto;
-  color: var(--text);
-}
-
-.kw { color: var(--signal); font-weight: 600; }
-.ty { color: var(--amber); }
-.fn { color: var(--cyan); }
-.st { color: var(--ok); }
-.cm { color: var(--text-muted); font-style: italic; }
-
-/* ── 4-METER KPI STRIP (TEENAGE ENGINEERING FIELD METERS) ───────────────── */
-.kpi-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: var(--panel);
-}
-
-.kpi-cell {
-  padding: 22px 24px;
-  border-right: 1px solid var(--line);
-  position: relative;
-}
-
-.kpi-cell:last-child {
-  border-right: 0;
-}
-
-.kpi-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  display: flex;
-  justify-content: space-between;
-}
-
-.kpi-value {
-  font-family: var(--font-display);
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 1.05;
-  margin: 10px 0 6px;
-  color: var(--text);
-  font-variant-numeric: tabular-nums;
-}
-
-.kpi-value.accent { color: var(--signal); }
-.kpi-value.ok     { color: var(--ok); }
-
-.kpi-sub {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-sub);
-}
-
-/* ── SECTION HEADERS ────────────────────────────────────────────────────── */
-.section-head {
-  padding: 28px 28px 22px;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.section-head h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.1rem);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  line-height: 1;
-}
-
-.section-head p {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-sub);
-  max-width: 520px;
-}
-
-/* ── VULNERABILITY DISCOVERIES INTERACTIVE DECK (DONTLOOKUP.APP HUD) ────── */
-.vuln-explorer {
-  display: grid;
-  grid-template-columns: 380px 1fr;
-}
-
-.vuln-list {
-  border-right: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-}
-
-.vuln-item {
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 12px;
   width: 100%;
-  text-align: left;
-  background: var(--panel);
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  padding: 18px 20px;
-  cursor: pointer;
-  color: var(--text);
-  transition: background 0.15s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.vuln-item:last-child { border-bottom: 0; }
-
-.vuln-item:hover {
-  background: var(--panel-hover);
-}
-
-.vuln-item.active {
-  background: var(--panel-alt);
-  border-left: 4px solid var(--signal);
-}
-
-.vuln-item-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-}
-
-.severity-badge {
-  padding: 2px 7px;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid var(--signal);
-  color: var(--signal);
-  background: var(--signal-soft);
-}
-
-.severity-badge.high {
-  border-color: var(--amber);
-  color: var(--amber);
-  background: rgba(245, 158, 11, 0.12);
-}
-
-.vuln-item strong {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.vuln-item small {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.vuln-detail-pane {
-  padding: 30px 32px;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.vuln-detail-head {
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 18px;
-}
-
-.vuln-detail-head .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--signal);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.vuln-detail-head h3 {
-  font-family: var(--font-display);
-  font-size: 32px;
-  text-transform: uppercase;
-  margin-top: 6px;
-}
-
-.vuln-meta-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--line);
-  background: var(--panel);
-}
-
-.vuln-meta-grid > div {
-  padding: 12px 14px;
-  border-right: 1px solid var(--line);
-  font-family: var(--font-mono);
-}
-
-.vuln-meta-grid > div:last-child { border-right: 0; }
-
-.vuln-meta-grid span {
-  display: block;
-  font-size: 9px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.vuln-meta-grid strong {
-  font-size: 12px;
-  color: var(--text);
-  margin-top: 4px;
-  display: block;
-}
-
-.vuln-trace-box {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  padding: 16px 18px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.75;
-  color: var(--text-sub);
-  white-space: pre-wrap;
-}
-
-/* ── EXPERIENCE TIMELINE (FIELD OPERATIONS LOG) ─────────────────────────── */
-.exp-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.exp-row {
-  display: grid;
-  grid-template-columns: 270px 1fr;
-  border-bottom: 1px solid var(--line);
-}
-
-.exp-row:last-child { border-bottom: 0; }
-
-.exp-meta {
-  padding: 26px 24px;
-  background: var(--panel-alt);
-  border-right: 1px solid var(--line);
-  font-family: var(--font-mono);
-}
-
-.exp-period {
-  display: inline-block;
-  padding: 3px 8px;
-  font-size: 10px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  color: var(--signal);
-  margin-bottom: 10px;
-}
-
-.exp-org {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.4;
-}
-
-.exp-loc {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 6px;
-}
-
-.exp-body {
-  padding: 26px 30px;
-}
-
-.exp-role {
-  font-family: var(--font-display);
-  font-size: 26px;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  margin-bottom: 14px;
-  color: var(--text);
-}
-
-.exp-bullets {
-  list-style: none;
-  display: grid;
-  gap: 10px;
-}
-
-.exp-bullets li {
-  position: relative;
-  padding-left: 20px;
-  font-size: 14px;
-  color: var(--text-sub);
-}
-
-.exp-bullets li::before {
-  content: "›";
-  position: absolute;
-  left: 2px;
-  top: 0;
-  color: var(--signal);
-  font-family: var(--font-mono);
-  font-weight: 700;
-}
-
-.exp-bullets li strong {
-  color: var(--text);
-}
-
-/* ── PROJECTS HARDWARE RACK (2x4 BAYS) ──────────────────────────────────── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.proj-card {
-  padding: 28px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 18px;
-  background: var(--panel);
-  transition: background 0.15s ease;
-}
-
-.proj-card:nth-child(2n) { border-right: 0; }
-
-.proj-card:hover {
-  background: var(--panel-hover);
-}
-
-.proj-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-}
-
-.proj-badge {
-  padding: 3px 8px;
-  border: 1px solid var(--line-strong);
-  color: var(--text);
-  background: var(--bg);
-}
-
-.proj-badge.patent {
-  border-color: var(--ok);
-  color: var(--ok);
-  background: var(--ok-soft);
-}
-
-.proj-title {
-  font-family: var(--font-display);
-  font-size: 26px;
-  text-transform: uppercase;
-  margin: 10px 0 8px;
-  color: var(--text);
-}
-
-.proj-desc {
-  font-size: 13.5px;
-  color: var(--text-sub);
-  line-height: 1.65;
-}
-
-.proj-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-  flex-wrap: wrap;
-}
-
-.proj-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.proj-tags span {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  padding: 3px 7px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  color: var(--text-sub);
-}
-
-.proj-link {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--signal);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.proj-link:hover {
-  text-decoration: underline;
-}
-
-/* ── SKILLS & COMPETENCY MATRIX ─────────────────────────────────────────── */
-.skills-matrix {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.skill-bay {
-  padding: 24px 26px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.skill-bay:nth-child(3n) { border-right: 0; }
-
-.skill-bay-head {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--signal);
-  margin-bottom: 8px;
-}
-
-.skill-bay h3 {
-  font-family: var(--font-display);
-  font-size: 22px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-.skill-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.skill-chip {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  padding: 5px 10px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  color: var(--text);
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.skill-chip:hover {
-  border-color: var(--signal);
-  color: var(--signal);
-}
-
-/* ── INTERACTIVE FIELD TERMINAL (vola12do@field-console) ────────────────── */
-.terminal-body {
-  background: #07080a;
-  color: #e5e7eb;
-  padding: 22px 24px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  line-height: 1.75;
-  max-height: 360px;
-  overflow-y: auto;
-}
-
-.term-line {
-  margin-bottom: 8px;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.term-prompt {
-  color: #ff5500;
-  font-weight: 600;
-}
-
-.term-input-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  background: #0c0e12;
-  border-top: 1px solid #222630;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-}
-
-.term-input {
-  flex: 1;
-  background: transparent;
-  border: 0;
-  color: #f2f0ea;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  outline: none;
-}
-
-.term-quick-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 10px 24px;
-  background: var(--panel-alt);
-  border-top: 1px solid var(--line);
-}
-
-.term-cmd-chip {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  padding: 4px 9px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  color: var(--text-sub);
-  cursor: pointer;
-}
-
-.term-cmd-chip:hover {
-  border-color: var(--signal);
-  color: var(--signal);
-}
-
-/* ── EDUCATION & CREDENTIALS STRIP ──────────────────────────────────────── */
-.cred-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.cred-cell {
-  padding: 24px 26px;
-  border-right: 1px solid var(--line);
-}
-
-.cred-cell:last-child { border-right: 0; }
-
-.cred-cell small {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--signal);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.cred-cell h3 {
-  font-family: var(--font-display);
-  font-size: 24px;
-  text-transform: uppercase;
-  margin: 8px 0 6px;
-}
-
-.cred-cell p {
-  font-size: 13px;
-  color: var(--text-sub);
-}
-
-/* ── FOOTER & BOTTOM COORDINATE RAIL ────────────────────────────────────── */
-.site-footer {
-  margin-top: 40px;
-  border-top: 1px solid var(--line);
-  background: var(--panel);
-  padding: 28px 24px 56px;
-}
-
-.footer-inner {
-  max-width: var(--max-w);
+  max-width: 1760px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
+  padding-left: 44px;
+  padding-right: 44px;
+  position: relative;
+  z-index: 2;
 }
 
-.coord-hud {
+/* ==========================================================================
+   FIXED MINIMALIST HEADER ("PC" in huyml.co)
+   ========================================================================== */
+.site-header {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 90;
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-  padding: 5px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
+  z-index: 40;
+  padding-top: 34px;
+  padding-bottom: 22px;
+  background: linear-gradient(to bottom, var(--bg) 55%, rgba(236, 236, 236, 0));
+  transition: background 400ms var(--ease-out);
 }
 
-@media (max-width: 980px) {
-  .hero-grid,
-  .vuln-explorer,
-  .exp-row,
-  .projects-grid,
-  .skills-matrix,
-  .cred-grid {
+html[data-theme="dark"] .site-header {
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.92) 55%, rgba(17, 17, 17, 0));
+}
+
+.header-grid {
+  align-items: start;
+}
+
+.hdr-brand {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hdr-brand-name {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.hdr-brand-handle {
+  color: var(--ink-muted);
+}
+
+.hdr-role {
+  grid-column: 3 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hdr-label {
+  color: var(--ink-muted);
+}
+
+.hdr-value {
+  color: var(--ink);
+}
+
+.hdr-nav {
+  grid-column: 6 / span 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+
+.hdr-nav a,
+.hdr-nav button {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 200ms ease;
+}
+
+.hdr-nav a:hover,
+.hdr-nav a.is-active,
+.hdr-nav button:hover {
+  color: var(--ink);
+  opacity: 1;
+}
+
+.hdr-nav a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: var(--ink);
+}
+
+.hdr-controls {
+  grid-column: 10 / span 2;
+  display: flex;
+  gap: 20px;
+}
+
+.hdr-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hdr-toggle-row {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.hdr-toggle-opt {
+  color: var(--ink-muted);
+  transition: color 180ms ease;
+}
+
+.hdr-toggle-opt.is-on {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hdr-location {
+  grid-column: 12 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hdr-inquiry {
+  grid-column: 14 / span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 2px;
+}
+
+.copy-email-btn {
+  display: inline-flex;
+   flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+.copy-email-btn .copy-hint {
+  color: var(--ink-muted);
+  transition: color 180ms ease;
+}
+
+.copy-email-btn:hover .copy-hint {
+  color: var(--ink);
+}
+
+.copy-email-btn .copy-address {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   HERO FRAME ("100vh" Architectural Stage like huyml.co)
+   ========================================================================== */
+.hero-stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 132px;
+  padding-bottom: 36px;
+  position: relative;
+}
+
+/* Centerpiece Chromatic Canvas + Editorial Display Statement */
+.hero-centerpiece {
+  margin: auto 0;
+  padding: 28px 0;
+}
+
+.hero-editorial-col {
+  grid-column: 1 / span 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.chromatic-triad-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chromatic-dot {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  transition: background-color 420ms var(--ease-out), transform 220ms ease;
+}
+
+.hero-display-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(44px, 5.6vw, 86px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 14.5ch;
+}
+
+.hero-display-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Interactive Chromatic Artwork Card on Right of Hero (HuyML Showcase) */
+.hero-chromatic-card {
+  grid-column: 10 / span 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+  padding: 28px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--hairline);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 350ms ease, background-color 350ms ease;
+}
+
+.hero-chromatic-visual {
+  position: relative;
+  height: 210px;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 0.65fr;
+  gap: 1px;
+  background: var(--hairline);
+}
+
+.chroma-panel {
+  height: 100%;
+  transition: background-color 520ms var(--ease-out), transform 520ms var(--ease-out);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+
+.chroma-panel span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #111;
+  backdrop-filter: blur(6px);
+}
+
+.chroma-panel-1 { background-color: var(--chroma-1); }
+.chroma-panel-2 { background-color: var(--chroma-2); }
+.chroma-panel-3 { background-color: var(--chroma-3); }
+
+.hero-chromatic-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.hero-chromatic-meta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-Active-category {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.hero-active-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.hero-active-desc {
+  color: var(--ink-muted);
+  max-width: 44ch;
+  margin-top: 4px;
+}
+
+/* Hero Mid Info Strip (Matches `mid` in huyml.co: Author / Launch / Recognition) */
+.hero-mid-strip {
+  padding: 22px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.mid-col-author {
+  grid-column: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mid-col-launch {
+  grid-column: 4 / span 3;
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  row-gap: 6px;
+}
+
+.mid-col-recognition {
+  grid-column: 7 / span 6;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  row-gap: 6px;
+}
+
+.mid-col-actions {
+  grid-column: 13 / span 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+}
+
+.text-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  background: var(--ink);
+  color: var(--bg);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.text-link-pill:hover {
+  opacity: 0.84;
+  color: var(--bg);
+}
+
+.text-link-underline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Hero Bottom Strip (Matches `bottom` in huyml.co: Scroll | Selected work 01 / 08) */
+.hero-bottom-strip {
+  padding-top: 18px;
+  align-items: end;
+}
+
+.bot-scroll {
+  grid-column: 1 / span 2;
+  color: var(--ink-muted);
+}
+
+.bot-selected-counter {
+  grid-column: 3 / span 3;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.counter-fraction {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.counter-fraction .muted {
+  color: var(--ink-muted);
+}
+
+.bot-ruler-ticks {
+  grid-column: 6 / span 7;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 16px;
+}
+
+.ruler-tick {
+  flex: 1;
+  height: 5px;
+  background: var(--hairline-strong);
+  transition: height 240ms var(--ease-out), background-color 240ms ease;
+}
+
+.ruler-tick.is-major {
+  height: 11px;
+}
+
+.ruler-tick.is-active {
+  height: 16px;
+  background: var(--chroma-3);
+}
+
+.bot-cv-status {
+  grid-column: 13 / span 4;
+  text-align: right;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   SECTION HEADERS (Minimalist 16-Column Dividers)
+   ========================================================================== */
+.editorial-section {
+  padding-top: 96px;
+  padding-bottom: 64px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header-row {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 12px;
+  align-items: baseline;
+}
+
+.sec-index {
+  grid-column: 1 / span 2;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+.sec-title-wrap {
+  grid-column: 3 / span 6;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.sec-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.sec-count {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+.sec-subtitle {
+  grid-column: 9 / span 5;
+  color: var(--ink-muted);
+}
+
+.sec-filter-nav {
+  grid-column: 14 / span 3;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.filter-btn {
+  color: var(--ink-muted);
+  font-size: 12px;
+  transition: color 180ms ease;
+}
+
+.filter-btn.is-active,
+.filter-btn:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ==========================================================================
+   SELECTED WORK ARCHIVE (Exact HuyML Row Anatomy:
+   nr. | Title <mark> | Date | Color1 Color2 Color3 (23x23) | Category | Recognition | Description)
+   ========================================================================== */
+.work-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-row {
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--hairline);
+  align-items: start;
+  transition: background-color 260ms ease, opacity 260ms ease;
+  cursor: pointer;
+}
+
+.work-row:hover,
+.work-row.is-active {
+  background-color: rgba(255, 255, 255, 0.36);
+}
+
+html[data-theme="dark"] .work-row:hover,
+html[data-theme="dark"] .work-row.is-active {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.work-col-nr {
+  grid-column: 1 / span 1;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  padding-top: 3px;
+}
+
+.work-col-title {
+  grid-column: 2 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Exact HuyML <mark> title badge */
+.work-mark {
+  display: inline-block;
+  width: fit-content;
+  background-color: var(--ink);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  line-height: 1.35;
+}
+
+.work-display-sub {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.work-col-date {
+  grid-column: 5 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Exact HuyML 23px × 23px Color1, Color2, Color3 Swatches */
+.work-col-colors {
+  grid-column: 7 / span 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swatch-23 {
+  width: 23px;
+  height: 23px;
+  flex: none;
+  border: 1px solid rgba(23, 23, 23, 0.14);
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
+  position: relative;
+}
+
+html[data-theme="dark"] .swatch-23 {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.swatch-23:hover {
+  transform: scale(1.14);
+  z-index: 2;
+}
+
+.work-col-category {
+  grid-column: 9 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.work-col-recognition {
+  grid-column: 11 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.work-col-desc {
+  grid-column: 13 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.work-col-desc p {
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+
+.work-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.work-links a {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ==========================================================================
+   VULNERABILITY DISCOVERIES (Chromatic Advisory Index — 01 to 05)
+   ========================================================================== */
+.vuln-row {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline);
+  align-items: start;
+  cursor: pointer;
+  transition: background-color 240ms ease;
+}
+
+.vuln-row:hover,
+.vuln-row.is-open {
+  background-color: rgba(255, 255, 255, 0.36);
+}
+
+html[data-theme="dark"] .vuln-row:hover,
+html[data-theme="dark"] .vuln-row.is-open {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.vuln-drawer {
+  grid-column: 2 / span 15;
+  display: none;
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  column-gap: 24px;
+  padding-top: 18px;
+  margin-top: 16px;
+  border-top: 1px dashed var(--hairline-strong);
+}
+
+.vuln-row.is-open .vuln-drawer {
+  display: grid;
+}
+
+.vuln-drawer-block {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vuln-drawer-block p {
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   EXPERIENCE, EDUCATION & CAPABILITIES (Minimalist Multi-Column Index)
+   ========================================================================== */
+.exp-row {
+  padding-top: 26px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--hairline);
+  align-items: start;
+}
+
+.exp-col-period {
+  grid-column: 1 / span 2;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+.exp-col-org {
+  grid-column: 3 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-org-name {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.exp-col-role {
+  grid-column: 7 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.exp-col-location {
+  grid-column: 10 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.exp-col-notes {
+  grid-column: 12 / span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--ink-muted);
+}
+
+.exp-col-notes li {
+  list-style: none;
+  position: relative;
+  padding-left: 12px;
+  line-height: 1.42;
+}
+
+.exp-col-notes li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--ink-subtle);
+}
+
+/* Capabilities / Skills 6-Column Spec Grid */
+.skills-matrix {
+  padding-top: 28px;
+  row-gap: 32px;
+}
+
+.skill-group {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+}
+
+.skill-group-title {
+  color: var(--ink-muted);
+}
+
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   HUYML SIGNATURE DARK FROSTED CONTACT SHEET ("Come say hi")
+   ========================================================================== */
+.contact-sheet-section {
+  padding-top: 72px;
+  padding-bottom: 96px;
+  position: relative;
+  z-index: 2;
+}
+
+.huyml-contact-card {
+  grid-column: 1 / span 16;
+  background-color: var(--drawer-bg);
+  color: var(--drawer-ink);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  box-shadow: -2px 4px 24px rgba(0, 0, 0, 0.14);
+  padding: 48px 44px;
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 36px;
+}
+
+.contact-heading-col {
+  grid-column: 1 / span 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-serif-heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+
+.contact-subnote {
+  color: var(--drawer-muted);
+  max-width: 34ch;
+}
+
+.contact-options-grid {
+  grid-column: 6 / span 11;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 28px;
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-info-label {
+  color: var(--drawer-muted);
+  font-size: 12px;
+}
+
+.contact-info-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.contact-info-links a,
+.contact-info-links button {
+  color: #ffffff;
+  text-align: left;
+  width: fit-content;
+}
+
+.contact-info-links a:hover,
+.contact-info-links button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.85;
+}
+
+/* Credits & Colophon Footer */
+.site-footer {
+  padding-bottom: 44px;
+  color: var(--ink-muted);
+}
+
+.footer-left {
+  grid-column: 1 / span 6;
+}
+
+.footer-mid {
+  grid-column: 7 / span 5;
+}
+
+.footer-right {
+  grid-column: 12 / span 5;
+  text-align: right;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Tablet & Mobile)
+   ========================================================================== */
+@media (max-width: 1180px) {
+  .grid-16 {
+    padding-left: 24px;
+    padding-right: 24px;
+    column-gap: 16px;
+  }
+
+  .hdr-brand { grid-column: 1 / span 3; }
+  .hdr-role { display: none; }
+  .hdr-nav { grid-column: 4 / span 6; }
+  .hdr-controls { grid-column: 10 / span 3; }
+  .hdr-location { display: none; }
+  .hdr-inquiry { grid-column: 13 / span 4; }
+
+  .hero-editorial-col { grid-column: 1 / span 16; }
+  .hero-chromatic-card { grid-column: 1 / span 16; margin-top: 20px; }
+
+  .mid-col-author { grid-column: 1 / span 4; }
+  .mid-col-launch { grid-column: 5 / span 4; }
+  .mid-col-recognition { grid-column: 9 / span 8; }
+  .mid-col-actions { grid-column: 1 / span 16; justify-content: flex-start; padding-top: 12px; }
+
+  .work-col-nr { grid-column: 1 / span 1; }
+  .work-col-title { grid-column: 2 / span 5; }
+  .work-col-date { grid-column: 7 / span 3; }
+  .work-col-colors { grid-column: 10 / span 3; }
+  .work-col-category { grid-column: 13 / span 4; }
+  .work-col-recognition { grid-column: 2 / span 5; padding-top: 10px; }
+  .work-col-desc { grid-column: 7 / span 10; padding-top: 10px; }
+
+  .skill-group { grid-column: span 8; }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    padding-top: 18px;
+    padding-bottom: 14px;
+  }
+
+  .grid-16 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-left: 18px;
+    padding-right: 18px;
+    column-gap: 12px;
+  }
+
+  .hdr-brand { grid-column: 1 / span 2; }
+  .hdr-inquiry { grid-column: 3 / span 2; }
+  .hdr-nav { grid-column: 1 / span 4; padding-top: 8px; gap: 12px; }
+  .hdr-controls { display: none; }
+
+  .hero-stage { padding-top: 118px; }
+  .hero-editorial-col,
+  .hero-chromatic-card,
+  .mid-col-author,
+  .mid-col-launch,
+  .mid-col-recognition,
+  .mid-col-actions,
+  .bot-scroll,
+  .bot-selected-counter,
+  .bot-ruler-ticks,
+  .bot-cv-status,
+  .sec-index,
+  .sec-title-wrap,
+  .sec-subtitle,
+  .sec-filter-nav,
+  .work-col-nr,
+  .work-col-title,
+  .work-col-date,
+  .work-col-colors,
+  .work-col-category,
+  .work-col-recognition,
+  .work-col-desc,
+  .vuln-drawer,
+  .vuln-drawer-block,
+  .exp-col-period,
+  .exp-col-org,
+  .exp-col-role,
+  .exp-col-location,
+  .exp-col-notes,
+  .skill-group,
+  .huyml-contact-card,
+  .contact-heading-col,
+  .contact-options-grid,
+  .footer-left,
+  .footer-mid,
+  .footer-right {
+    grid-column: 1 / -1 !important;
+  }
+
+  .contact-options-grid {
     grid-template-columns: 1fr;
   }
-  .hero-left,
-  .vuln-list,
-  .exp-meta,
-  .proj-card,
-  .skill-bay,
-  .cred-cell {
-    border-right: 0;
+
+  .huyml-contact-card {
+    padding: 32px 22px;
   }
-  .kpi-strip {
-    grid-template-columns: repeat(2, 1fr);
+
+  .footer-right,
+  .bot-cv-status {
+    text-align: left;
   }
-  .kpi-cell:nth-child(2) { border-right: 0; }
-  .kpi-cell:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .nav-links { display: none; }
 }
