@@ -1,5 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="8" fill="#0a0b0d" stroke="#ff5500" stroke-width="3"/>
-  <rect x="8" y="8" width="48" height="6" fill="#ff5500"/>
-  <text x="32" y="47" text-anchor="middle" fill="#f2f0ea" font-family="Arial Narrow, Impact, sans-serif" font-weight="bold" font-size="30">VT</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Retro Offset Shadow -->
+  <rect x="7" y="7" width="52" height="52" rx="10" fill="#18181b" />
+  <!-- Cream Zine Card Base -->
+  <rect x="4" y="4" width="52" height="52" rx="10" fill="#f6f1e6" stroke="#18181b" stroke-width="3.5" />
+  <!-- Top Chromatic Retro Strip -->
+  <path d="M7 14 H53" stroke="#18181b" stroke-width="3" />
+  <rect x="6" y="6" width="12" height="7" rx="2" fill="#ff5a36" />
+  <rect x="18" y="6" width="12" height="7" fill="#f4b41a" />
+  <rect x="30" y="6" width="12" height="7" fill="#1fa372" />
+  <rect x="42" y="6" width="12" height="7" rx="2" fill="#3b6ef6" />
+  <!-- Bold Retro V~ Prompt Monogram -->
+  <path d="M15 24 L25 46 L35 24" fill="none" stroke="#18181b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="38" y="40" width="10" height="5.5" rx="1.5" fill="#ff5a36" stroke="#18181b" stroke-width="1.5" />
 </svg>

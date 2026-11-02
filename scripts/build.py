@@ -81,7 +81,18 @@ def build_nav(rel_root: str) -> str:
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="wrapper nav-inner">
       <a class="nav-logo" href="{rel_root}index.html">
-        vola12do<span class="prompt-tilde">~$</span>
+        <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true" style="flex:none">
+          <rect x="7" y="7" width="52" height="52" rx="10" fill="#18181b" />
+          <rect x="4" y="4" width="52" height="52" rx="10" fill="#f6f1e6" stroke="#18181b" stroke-width="4" />
+          <rect x="6" y="6" width="12" height="7" fill="#ff5a36" />
+          <rect x="18" y="6" width="12" height="7" fill="#f4b41a" />
+          <rect x="30" y="6" width="12" height="7" fill="#1fa372" />
+          <rect x="42" y="6" width="12" height="7" fill="#3b6ef6" />
+          <path d="M6 14 H54" stroke="#18181b" stroke-width="3" />
+          <path d="M15 24 L25 46 L35 24" fill="none" stroke="#18181b" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="38" y="40" width="10" height="5.5" rx="1.5" fill="#ff5a36" stroke="#18181b" stroke-width="1.5" />
+        </svg>
+        <span>vola12do<span class="prompt-tilde">~$</span></span>
         <span class="nav-chroma-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       </a>
       <ul class="nav-links">
@@ -106,7 +117,7 @@ def build_nav(rel_root: str) -> str:
 def build_footer(rel_root: str) -> str:
     return f"""  <footer class="site-footer">
     <div class="wrapper">
-      <p>crafted by <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700">@Vola12do</a> (Vishwash Tank) &nbsp;&middot;&nbsp; chromatic retro zine &nbsp;&middot;&nbsp; 2026</p>
+      <p>crafted by <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700">@Vola12do</a> (Vishwash Tank) &nbsp;&middot;&nbsp; 2026</p>
     </div>
   </footer>
   <script src="{rel_root}assets/js/site.js" defer></script>"""
@@ -143,6 +154,9 @@ def render_post_page(post: Dict[str, Any]) -> str:
   <title>{title} &mdash; vola12do</title>
   <meta name="description" content="{summary}" />
   <link rel="canonical" href="{SITE_URL}/blog/{slug}/" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../assets/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -197,8 +211,11 @@ def render_blog_index(posts: List[Dict[str, Any]]) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';" />
   <title>Blog &amp; Field Notes &mdash; vola12do (Vishwash Tank)</title>
-  <meta name="description" content="Security writeups, APK forensics notes, and hardware hacking logs by Vishwash Tank (@Vola12do)." />
+  <meta name="description" content="Security writeups, APK reverse engineering notes, and hardware logs by Vishwash Tank (@Vola12do)." />
   <link rel="canonical" href="{SITE_URL}/blog/" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -209,10 +226,10 @@ def render_blog_index(posts: List[Dict[str, Any]]) -> str:
 {build_nav("../")}
   <main class="wrapper">
     <div class="blog-header-box">
-      <span class="blog-kicker">&#9998; Obsidian &rarr; GitHub Pages Zine</span>
+      <span class="blog-kicker">&#9998; Notes &amp; Write-ups</span>
       <h1 class="blog-main-title">~/blog &amp; field_notes</h1>
       <p class="blog-sub">
-        Writeups on Android APK reverse engineering, REST API bug hunting (CVSS 10.0), and embedded NFC/RF hardware tinkering.
+        Practitioner write-ups on REST API testing, Android reverse engineering, and embedded NFC/RF hardware tinkering.
       </p>
     </div>
 

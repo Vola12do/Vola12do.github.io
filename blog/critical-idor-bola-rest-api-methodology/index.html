@@ -7,6 +7,9 @@
   <title>Hunting Critical IDOR &amp; BOLA in Enterprise REST APIs: From Traffic Interception to CERT-In Disclosure (CVSS 10.0) &mdash; vola12do</title>
   <meta name="description" content="Systematic methodology for discovering Broken Object Level Authorization (BOLA) and Critical IDOR (CVSS v3.1: 10.0) vulnerabilities across web and mobile REST APIs using HTTP Toolkit, Burp Suite, and Python parameter fuzzing." />
   <link rel="canonical" href="https://vola12do.github.io/blog/critical-idor-bola-rest-api-methodology/" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../../assets/favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -21,7 +24,18 @@
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="wrapper nav-inner">
       <a class="nav-logo" href="../../index.html">
-        vola12do<span class="prompt-tilde">~$</span>
+        <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true" style="flex:none">
+          <rect x="7" y="7" width="52" height="52" rx="10" fill="#18181b" />
+          <rect x="4" y="4" width="52" height="52" rx="10" fill="#f6f1e6" stroke="#18181b" stroke-width="4" />
+          <rect x="6" y="6" width="12" height="7" fill="#ff5a36" />
+          <rect x="18" y="6" width="12" height="7" fill="#f4b41a" />
+          <rect x="30" y="6" width="12" height="7" fill="#1fa372" />
+          <rect x="42" y="6" width="12" height="7" fill="#3b6ef6" />
+          <path d="M6 14 H54" stroke="#18181b" stroke-width="3" />
+          <path d="M15 24 L25 46 L35 24" fill="none" stroke="#18181b" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="38" y="40" width="10" height="5.5" rx="1.5" fill="#ff5a36" stroke="#18181b" stroke-width="1.5" />
+        </svg>
+        <span>vola12do<span class="prompt-tilde">~$</span></span>
         <span class="nav-chroma-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       </a>
       <ul class="nav-links">
@@ -79,7 +93,7 @@ def differential_probe(base_url: str, token_low_priv: str, target_id: int):
   </main>
   <footer class="site-footer">
     <div class="wrapper">
-      <p>crafted by <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700">@Vola12do</a> (Vishwash Tank) &nbsp;&middot;&nbsp; chromatic retro zine &nbsp;&middot;&nbsp; 2026</p>
+      <p>crafted by <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700">@Vola12do</a> (Vishwash Tank) &nbsp;&middot;&nbsp; 2026</p>
     </div>
   </footer>
   <script src="../../assets/js/site.js" defer></script>
