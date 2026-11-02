@@ -1,106 +1,57 @@
-<!doctype html>
-<html lang="en" data-theme="light" style="--chroma-1:#1A2E26;--chroma-2:#DCE5DF;--chroma-3:#2F855A;">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
-  <title>Engineering Passive NTAG213 RFID/NFC Micro-Tags for Forensic Disaster Victim Identification — Vishwash Tank (@Vola12do)</title>
-  <meta name="description" content="Hardware and cryptographic memory-mapping notes from designing the Smart Denture NFC Scanner with Vikram Dental Care and National Forensic Sciences University (NFSU), Gandhinagar.">
-  <link rel="canonical" href="https://vola12do.github.io/blog/forensic-nfc-rfid-smart-denture-nfsu/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../../assets/css/blog.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';" />
+  <title>Engineering Passive NTAG213 RFID/NFC Micro-Tags for Forensic Disaster Victim Identification &mdash; vola12do</title>
+  <meta name="description" content="Hardware and cryptographic memory-mapping notes from designing the Smart Denture NFC Scanner with Vikram Dental Care and National Forensic Sciences University (NFSU), Gandhinagar." />
+  <link rel="canonical" href="https://vola12do.github.io/blog/forensic-nfc-rfid-smart-denture-nfsu/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/blog.css" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Engineering Passive NTAG213 RFID/NFC Micro-Tags for Forensic Disaster Victim Identification", "description": "Hardware and cryptographic memory-mapping notes from designing the Smart Denture NFC Scanner with Vikram Dental Care and National Forensic Sciences University (NFSU), Gandhinagar.", "datePublished": "2026-09-14", "author": {"@type": "Person", "name": "Vishwash Tank", "url": "https://vola12do.github.io/"}, "mainEntityOfPage": "https://vola12do.github.io/blog/forensic-nfc-rfid-smart-denture-nfsu/"}</script>
 </head>
 <body>
-  <div class="chromatic-wash" aria-hidden="true"></div>
-  <header class="site-header" role="banner">
-    <div class="grid-16 header-grid">
-      <div class="hdr-brand">
-        <a href="../../index.html" class="hdr-brand-name">Vishwash Tank</a>
-        <span class="hdr-brand-handle">@Vola12do</span>
-      </div>
-      <div class="hdr-role">
-        <span class="hdr-label">Cybersecurity Researcher</span>
-        <span class="hdr-value">VAPT · Mobile Forensics · RF</span>
-      </div>
-      <nav class="hdr-nav" aria-label="Primary Navigation">
-        <a href="../../index.html#work">Work</a>
-        <a href="../../index.html#advisories">Advisories</a>
-        <a href="../../index.html#about">About</a>
-        <a href="../../blog/" class="is-active">Blog</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="hdr-controls">
-        <div class="hdr-control-group">
-          <span class="hdr-label">Audio</span>
-          <div class="hdr-toggle-row">
-            <button type="button" id="audio-on-btn" class="hdr-toggle-opt" aria-label="Enable subtle UI audio">On</button>
-            <button type="button" id="audio-off-btn" class="hdr-toggle-opt is-on" aria-label="Disable UI audio">Off</button>
-          </div>
-        </div>
-        <div class="hdr-control-group">
-          <span class="hdr-label">Surface</span>
-          <div class="hdr-toggle-row">
-            <button type="button" id="theme-light-btn" class="hdr-toggle-opt is-on" aria-label="Light stone surface">Light</button>
-            <button type="button" id="theme-dark-btn" class="hdr-toggle-opt" aria-label="Dark ink surface">Dark</button>
-          </div>
-        </div>
-      </div>
-      <div class="hdr-location">
-        <span class="hdr-label">Working globally</span>
-        <span class="hdr-value" id="live-location-time">JAIPUR, --:--</span>
-      </div>
-      <div class="hdr-inquiry">
-        <button type="button" class="copy-email-btn" data-copy-email="vishwashtank@gmail.com">
-          <span class="copy-hint" data-copy-label>For inquiries · Click to copy</span>
-          <span class="copy-address">vishwashtank@gmail.com</span>
-        </button>
-      </div>
+  <div class="chromatic-ribbon" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <nav class="site-nav" aria-label="Main Navigation">
+    <div class="wrapper nav-inner">
+      <a class="nav-logo" href="../../index.html">
+        vola12do<span class="prompt-tilde">~$</span>
+        <span class="nav-chroma-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html#about">about</a></li>
+        <li><a href="../../index.html#vulns">vulns</a></li>
+        <li><a href="../../index.html#experience">exp</a></li>
+        <li><a href="../../index.html#projects">projects</a></li>
+        <li><a href="../../index.html#skills">skills</a></li>
+        <li><a href="../../blog/" class="is-active">blog</a></li>
+        <li><a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer">github &#8599;</a></li>
+        <li>
+          <button type="button" id="theme-toggle-btn" class="theme-pill-btn" aria-label="Toggle Paper and CRT Night theme">
+            <span id="theme-toggle-icon">&#9728;</span>
+            <span id="theme-toggle-text">Paper</span>
+          </button>
+        </li>
+      </ul>
     </div>
-  </header>
-  <main id="top">
-    <section class="blog-hero">
-      <div class="grid-16">
-        <div class="blog-hero-kicker">
-          <a href="../" class="text-link-underline">← Research Archive</a>
-          <span>Security Research</span>
-        </div>
-        <div class="blog-hero-main">
-          <h1 class="blog-hero-title">Engineering Passive NTAG213 RFID/NFC Micro-Tags for Forensic Disaster Victim Identification</h1>
-          <p class="blog-hero-sub">Hardware and cryptographic memory-mapping notes from designing the Smart Denture NFC Scanner with Vikram Dental Care and National Forensic Sciences University (NFSU), Gandhinagar.</p>
-        </div>
-        <div class="blog-hero-meta">
-          <div class="work-col-colors" aria-label="Chromatic palette">
-            <span class="swatch-23" style="background-color:#1A2E26"></span>
-            <span class="swatch-23" style="background-color:#DCE5DF"></span>
-            <span class="swatch-23" style="background-color:#2F855A"></span>
-          </div>
-          <span>2026-09-14 · 1 min read</span>
-        </div>
-      </div>
-    </section>
+  </nav>
+  <main class="wrapper">
+    <div class="blog-header-box">
+      <p><a href="../" style="text-decoration:underline;font-weight:700">&larr; back to all notes</a></p>
+      <span class="blog-kicker" style="margin-top:10px">Security Research &middot; 2026-09-14 &middot; 1 min read</span>
+      <h1 class="blog-main-title">Engineering Passive NTAG213 RFID/NFC Micro-Tags for Forensic Disaster Victim Identification</h1>
+      <p class="blog-sub">Hardware and cryptographic memory-mapping notes from designing the Smart Denture NFC Scanner with Vikram Dental Care and National Forensic Sciences University (NFSU), Gandhinagar.</p>
+      <div class="hero-badges" style="margin-top:14px;margin-bottom:0"><span class="badge badge-yellow">#hardware</span> <span class="badge badge-yellow">#security</span> <span class="badge badge-yellow">#writeup</span></div>
+    </div>
 
-    <section class="article-shell">
-      <div class="grid-16">
-        <aside class="article-sidebar">
-          <div class="article-meta-block">
-            <span class="hdr-label">Author</span>
-            <span>Vishwash Tank (@Vola12do)</span>
-          </div>
-          <div class="article-meta-block">
-            <span class="hdr-label">Published</span>
-            <span>2026-09-14</span>
-          </div>
-          <div class="article-meta-block">
-            <span class="hdr-label">Tags</span>
-            <div class="tag-pill-list"><span class="tag-pill">hardware</span><span class="tag-pill">security</span><span class="tag-pill">writeup</span></div>
-          </div>
-        </aside>
-        <article class="article-prose">
-          <h2 id="01-forensic-problem-statement">01 // Forensic Problem Statement</h2>
+    <article class="article-card article-prose">
+      <h2 id="01-forensic-problem-statement">01 // Forensic Problem Statement</h2>
 <p>In mass-disaster scenarios involving extreme thermal or physical trauma, conventional biometric identifiers often degrade, while acrylic and ceramic dental prosthetics survive intact. During my appointment as <strong>Technical Project Associate</strong> with <strong>Vikram Dental Care &amp; National Forensic Sciences University (NFSU), Gandhinagar</strong>, we engineered the <strong>Smart Denture NFC Scanner</strong> — embedding passive <code>13.56 MHz</code> (<code>ISO/IEC 14443 Type A</code>) <code>NTAG213</code> micro-transponders directly into dental prosthetics.</p>
 <h2 id="02-hardware-architecture-ntag213-memory-layout">02 // Hardware Architecture &amp; NTAG213 Memory Layout</h2>
 <p>Using <strong>Arduino microcontrollers</strong> interfaced over <code>SPI</code> with <strong><code>MFRC522</code> (<code>RC522</code>)</strong> reader/writer modules, we characterized read/write coupling distance, prosthetic resin attenuation, and thermal survival:</p>
@@ -119,54 +70,11 @@
 <li><strong>Immutable Hardware Binding:</strong> The forensic record stored in Pages <code>04h..24h</code> binds the patient identifier and dental clinic code to the factory-burned 7-byte <code>UID</code> in Pages <code>00h..01h</code> using a compact keyed digest (<code>HMAC-SHA256</code> truncated to 128 bits), preventing tag cloning onto blank NTAG213 transponders.</li>
 <li><strong>Write-Once Lock Enforcement:</strong> After clinical provisioning, Password Authentication (<code>PWD</code> / <code>AUTH0</code>) and irreversible static/dynamic lock bits are blown so field recovery scanners can verify the record offline without risking accidental overwrite.</li>
 </ul>
-        </article>
-      </div>
-    </section>
-    <section id="contact" class="contact-sheet-section" aria-labelledby="contact-heading">
-      <div class="grid-16">
-        <div class="huyml-contact-card">
-          <div class="contact-heading-col">
-            <div>
-              <h2 id="contact-heading" class="contact-serif-heading">Come say hi</h2>
-            </div>
-            <p class="contact-subnote">
-              Open to Offensive Security, VAPT, Mobile Malware Forensics, and Embedded Security R&amp;D opportunities worldwide.
-            </p>
-          </div>
-          <div class="contact-options-grid">
-            <div class="contact-info-item">
-              <span class="contact-info-label">Drop me a line</span>
-              <div class="contact-info-links">
-                <button type="button" data-copy-email="vishwashtank@gmail.com">
-                  <span data-copy-label>vishwashtank@gmail.com (Click to copy)</span>
-                </button>
-                <a href="mailto:vishwashtank@gmail.com">Open mail client ↗</a>
-              </div>
-            </div>
-            <div class="contact-info-item">
-              <span class="contact-info-label">Direct line</span>
-              <div class="contact-info-links">
-                <a href="tel:+919664970450">+91 96649 70450</a>
-                <span>Jaipur / Ahmedabad, India</span>
-              </div>
-            </div>
-            <div class="contact-info-item">
-              <span class="contact-info-label">Portfolio &amp; CV</span>
-              <div class="contact-info-links">
-                <a href="../../index.html">Main Portfolio ↗</a>
-                <a href="../../assets/Vishwash_Tank_CV.pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF) ↗</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </article>
   </main>
-  <footer class="site-footer" role="contentinfo">
-    <div class="grid-16">
-      <div class="footer-left">© 2026 Vishwash Tank (@Vola12do). All rights reserved.</div>
-      <div class="footer-mid">Typography: Instrument Serif &amp; Inter · Chromatic Editorial System</div>
-      <div class="footer-right"><a href="#top">Back to top ↑</a></div>
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>crafted by <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700">@Vola12do</a> (Vishwash Tank) &nbsp;&middot;&nbsp; chromatic retro zine &nbsp;&middot;&nbsp; 2026</p>
     </div>
   </footer>
   <script src="../../assets/js/site.js" defer></script>
