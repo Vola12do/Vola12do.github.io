@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Field Journal &amp; Technical Writeups — Vishwash Tank (@Vola12do)</title>
+  <meta name="description" content="Technical cybersecurity research, vulnerability disclosure methodologies, Android reverse engineering, and RF hardware writeups by Vishwash Tank (@Vola12do)." />
+  <link rel="canonical" href="https://vola12do.github.io/blog/" />
+  <meta name="author" content="Vishwash Tank" />
+  <meta name="theme-color" content="#0a0b0d" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vishwash Tank // Field Console" />
+  <meta property="og:title" content="Field Journal &amp; Writeups — Vishwash Tank (@Vola12do)" />
+  <meta property="og:description" content="Technical cybersecurity research, vulnerability disclosure methodologies, and Android reverse engineering writeups." />
+  <meta property="og:url" content="https://vola12do.github.io/blog/" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/blog.css" />
+</head>
+<body>
+
+<header class="top-telemetry">
+  <div class="telemetry-strip">
+    <div class="status-cluster">
+      <span><i class="led-dot"></i> FIELD JOURNAL // TECHNICAL RESEARCH &amp; WRITEUPS</span>
+      <span>AUTHOR: VISHWASH TANK (@VOLA12DO)</span>
+    </div>
+    <div class="status-cluster">
+      <span>OBSIDIAN-COMPATIBLE BUILD PIPELINE</span>
+    </div>
+  </div>
+
+  <div class="nav-deck">
+    <a href="../" class="brand-unit">
+      <span class="brand-mark">VT</span>
+      <span class="brand-text">
+        <strong>VISHWASH TANK // @VOLA12DO</strong>
+        <small>FIELD JOURNAL &amp; WRITEUPS</small>
+      </span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="../"><span class="idx">00</span>Console Home</a></li>
+      <li><a href="../#vulns"><span class="idx">01</span>Disclosures</a></li>
+      <li><a href="../#projects"><span class="idx">02</span>Systems</a></li>
+      <li><a href="./" class="active"><span class="idx">03</span>Writeups</a></li>
+      <li><a href="https://medium.com/@vishwashtank" target="_blank" rel="noopener noreferrer"><span class="idx">04</span>Medium &#8599;</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button type="button" id="theme-toggle-btn" class="hw-btn">SURFACE: CARBON [DARK]</button>
+      <a href="../assets/Vishwash_Tank_CV.pdf" target="_blank" rel="noopener noreferrer" class="hw-btn primary">DOWNLOAD CV [PDF] &#8599;</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="blog-page-header">
+    <p class="blog-hero-tag">FIELD RESEARCH // WRITEUPS &amp; ROOT-CAUSE NOTES</p>
+    <h1 class="blog-page-title"><span class="acc">~/</span>WRITEUPS</h1>
+    <p class="blog-page-sub">
+      Technical cybersecurity research, coordinated vulnerability disclosure methodologies (CERT-In), Android &amp; Flutter reverse engineering notes, and RF/NFC forensic hardware logs.
+    </p>
+  </div>
+
+  <div class="blog-cards">
+    <!-- POSTS:START -->
+
+    <a href="android-apk-entropy-and-hprof-forensics/" class="blog-card">
+      <div class="blog-card-meta">
+        <span class="blog-card-date">28/10/26</span>
+        <span>&middot;</span>
+        <span>2 min read</span>
+        <span>&middot;</span>
+        <span>424 words</span>
+      </div>
+      <div class="blog-card-title">Deterministic Android &amp; Flutter Reverse Engineering: AES-128 Key Entropy &amp; ART Heap Forensics</div>
+      <p class="blog-card-excerpt">Field methodology for extracting static symmetric AES-128-GCM keys from decompiled Android/Flutter packages using JADX, APKTool, MobSF, Shannon entropy scanning, and ART .hprof object-graph analysis.</p>
+      <div class="blog-card-footer">
+        <div class="post-tags">
+          <span class="tag tag-android">android</span>
+          <span class="tag tag-security">security</span>
+          <span class="tag tag-writeup">writeup</span>
+          <span class="tag tag-linux">tools</span>
+        </div>
+        <span class="read-more">READ DISPATCH &rarr;</span>
+      </div>
+    </a>
+
+    <a href="critical-idor-bola-rest-api-methodology/" class="blog-card">
+      <div class="blog-card-meta">
+        <span class="blog-card-date">19/10/26</span>
+        <span>&middot;</span>
+        <span>1 min read</span>
+        <span>&middot;</span>
+        <span>280 words</span>
+      </div>
+      <div class="blog-card-title">Hunting Critical IDOR &amp; BOLA in Enterprise REST APIs: From Traffic Interception to CERT-In Disclosure (CVSS 10.0)</div>
+      <p class="blog-card-excerpt">Systematic methodology for discovering Broken Object Level Authorization (BOLA) and Critical IDOR (CVSS v3.1: 10.0) vulnerabilities across web and mobile REST APIs using HTTP Toolkit, Burp Suite, and Python parameter fuzzing.</p>
+      <div class="blog-card-footer">
+        <div class="post-tags">
+          <span class="tag tag-security">security</span>
+          <span class="tag tag-writeup">writeup</span>
+          <span class="tag tag-linux">tools</span>
+        </div>
+        <span class="read-more">READ DISPATCH &rarr;</span>
+      </div>
+    </a>
+
+    <a href="forensic-nfc-rfid-smart-denture-nfsu/" class="blog-card">
+      <div class="blog-card-meta">
+        <span class="blog-card-date">14/09/26</span>
+        <span>&middot;</span>
+        <span>1 min read</span>
+        <span>&middot;</span>
+        <span>256 words</span>
+      </div>
+      <div class="blog-card-title">Engineering Passive NTAG213 RFID/NFC Micro-Tags for Forensic Disaster Victim Identification</div>
+      <p class="blog-card-excerpt">Hardware and cryptographic memory-mapping notes from designing the Smart Denture NFC Scanner with Vikram Dental Care and National Forensic Sciences University (NFSU), Gandhinagar.</p>
+      <div class="blog-card-footer">
+        <div class="post-tags">
+          <span class="tag tag-android">hardware</span>
+          <span class="tag tag-security">security</span>
+          <span class="tag tag-writeup">writeup</span>
+        </div>
+        <span class="read-more">READ DISPATCH &rarr;</span>
+      </div>
+    </a>
+
+    <!-- POSTS:END -->
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>VISHWASH TANK (@VOLA12DO) // FIELD RESEARCH JOURNAL</span>
+    <span>
+      <a href="../">HOME</a> &nbsp;·&nbsp;
+      <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer">GITHUB</a> &nbsp;·&nbsp;
+      <a href="https://medium.com/@vishwashtank" target="_blank" rel="noopener noreferrer">MEDIUM</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

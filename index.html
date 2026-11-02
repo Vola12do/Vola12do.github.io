@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Vishwash Tank (@Vola12do) — Application Security, VAPT, Android Forensics &amp; RF Lab</title>
+  <meta name="description" content="Field console and technical portfolio of Vishwash Tank (@Vola12do) — Application Security Researcher, Cyber Crime Intern at Rajasthan Police HQ, NFSU Forensic Associate, CERT-In CVSS 10.0 researcher, and creator of NoCTF (Patent Filed)." />
+  <link rel="canonical" href="https://vola12do.github.io/" />
+  <meta name="author" content="Vishwash Tank" />
+  <meta name="theme-color" content="#0a0b0d" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vishwash Tank // Vola12do" />
+  <meta property="og:title" content="Vishwash Tank (@Vola12do) — AppSec, VAPT, Mobile Forensics &amp; RF Lab" />
+  <meta property="og:description" content="Application Security Researcher • CERT-In CVSS 10.0 • Rajasthan Police HQ Cyber Crime • NFSU Forensics • NoCTF (Patent Filed)." />
+  <meta property="og:url" content="https://vola12do.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vishwash Tank (@Vola12do) — AppSec &amp; VAPT Field Console" />
+  <meta name="twitter:description" content="Application Security, VAPT, API &amp; Mobile Security, Python Automation, and Embedded RF Security." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://vola12do.github.io/#person",
+        "name": "Vishwash Tank",
+        "alternateName": "Vola12do",
+        "url": "https://vola12do.github.io/",
+        "email": "mailto:vishwashtank@gmail.com",
+        "jobTitle": "Application Security & VAPT Researcher",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jaipur",
+          "addressRegion": "Rajasthan",
+          "addressCountry": "IN"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Gujarat University"
+        },
+        "sameAs": [
+          "https://github.com/Vola12do",
+          "https://www.linkedin.com/in/vishwash-tank-89308b28b",
+          "https://medium.com/@vishwashtank"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vola12do.github.io/#website",
+        "url": "https://vola12do.github.io/",
+        "name": "Vishwash Tank // Field Console",
+        "description": "Application Security, VAPT, Mobile Forensics, Python Automation & Hardware RF Research.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://vola12do.github.io/#person" }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     TOP HARDWARE TELEMETRY & NAVIGATION DECK
+     ═══════════════════════════════════════════════════════════════════════ -->
+<header class="top-telemetry">
+  <div class="telemetry-strip">
+    <div class="status-cluster">
+      <span><i class="led-dot"></i> FIELD UNIT // VT-2026.11</span>
+      <span>OP: RAJASTHAN POLICE HQ (SP CYBER CRIME)</span>
+      <span>CERT-IN DISCLOSURE: CVSS 10.0 CRITICAL</span>
+    </div>
+    <div class="status-cluster">
+      <span>LOC: JAIPUR, IN [26.9124° N, 75.7873° E]</span>
+    </div>
+  </div>
+
+  <div class="nav-deck">
+    <a href="./" class="brand-unit">
+      <span class="brand-mark">VT</span>
+      <span class="brand-text">
+        <strong>VISHWASH TANK // @VOLA12DO</strong>
+        <small>APPSEC · VAPT · MOBILE FORENSICS · RF LAB</small>
+      </span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#vulns"><span class="idx">01</span>Disclosures</a></li>
+      <li><a href="#experience"><span class="idx">02</span>Operations</a></li>
+      <li><a href="#projects"><span class="idx">03</span>Systems</a></li>
+      <li><a href="#skills"><span class="idx">04</span>Arsenal</a></li>
+      <li><a href="#terminal"><span class="idx">05</span>CLI</a></li>
+      <li><a href="blog/"><span class="idx">06</span>Writeups</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button type="button" id="sound-toggle-btn" class="hw-btn" aria-label="Toggle mechanical click sound">CLICK: ON</button>
+      <button type="button" id="theme-toggle-btn" class="hw-btn" aria-label="Toggle surface theme">SURFACE: CARBON [DARK]</button>
+      <a href="assets/Vishwash_Tank_CV.pdf" target="_blank" rel="noopener noreferrer" class="hw-btn primary">DOWNLOAD CV [PDF] &#8599;</a>
+    </div>
+  </div>
+</header>
+
+<main class="chassis">
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       MODULE 01 // HERO INSTRUMENT DECK & NOTHING DOT-MATRIX DISPLAY
+       ═════════════════════════════════════════════════════════════════════ -->
+  <section class="module-frame">
+    <div class="module-bar">
+      <span><span class="mod-code">SYS // 01</span> — OPERATOR DOSSIER &amp; SIGNAL MATRIX</span>
+      <span>CLEARANCE: AUTHORIZED VAPT &amp; FORENSIC TRIAGE</span>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div>
+          <div class="hero-eyebrow">Application Security · API &amp; Mobile VAPT · Python &amp; RF Automation</div>
+          <h1 class="hero-title">
+            VISHWASH<br />
+            TANK <span class="stroke-tag">@Vola12do</span>
+          </h1>
+          <p class="hero-lead">
+            Security and forensic engineering practitioner operating at the intersection of
+            <strong>Web &amp; REST API VAPT</strong>, <strong>Android &amp; Flutter reverse engineering</strong>,
+            and <strong>embedded RF/NFC hardware security</strong>. Currently serving as
+            <strong>Cyber Crime Intern at Rajasthan Police Headquarters (SP Cyber Crime, Jaipur)</strong>,
+            following forensic hardware research with <strong>NFSU Gandhinagar</strong>.
+          </p>
+        </div>
+
+        <div>
+          <div class="hero-cta-row">
+            <a href="assets/Vishwash_Tank_CV.pdf" target="_blank" rel="noopener noreferrer" class="hw-btn primary">DOWNLOAD OFFICIAL CV (PDF) &#8599;</a>
+            <a href="#vulns" class="hw-btn">INSPECT CVSS 10.0 DISCLOSURES</a>
+            <a href="blog/" class="hw-btn">TECHNICAL WRITEUPS // BLOG</a>
+            <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer" class="hw-btn">GITHUB // @VOLA12DO &#8599;</a>
+          </div>
+
+          <div class="hero-badges">
+            <span class="spec-pill"><b>CERT-IN</b> CVSS 10.0 IDOR</span>
+            <span class="spec-pill"><b>PATENT FILED</b> NoCTF CLOUD LABS</span>
+            <span class="spec-pill"><b>MOBILE RE</b> MOBSF · JADX · APKTOOL</span>
+            <span class="spec-pill"><b>SIEM</b> SPLUNK · ELASTIC · SURICATA</span>
+            <span class="spec-pill"><b>RF/IOT</b> ESP32 · NRF24L01 · NTAG213</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="dot-matrix-bay">
+          <div class="bay-header">
+            <span id="dm-mode-label">SIGNAL // CERT-IN CVSS 10.0</span>
+            <span><i class="led-dot orange"></i> INTERACTIVE 28×7 LED MATRIX</span>
+          </div>
+          <div id="dot-matrix-canvas" class="dot-matrix-canvas" aria-label="Interactive LED dot matrix display"></div>
+        </div>
+
+        <div class="rust-bio-panel">
+          <div class="rust-bio-header">
+            <span>src/operator/about_me.rs</span>
+            <span>RUST // ZERO-SLOP SPEC</span>
+          </div>
+          <pre class="rust-bio-body"><code><span class="cm">// Verified Operator Specification (CV 2026.11)</span>
+<span class="kw">struct</span> <span class="ty">SecurityPractitioner</span> {
+    name:        <span class="ty">&amp;'static str</span>,
+    handle:      <span class="ty">&amp;'static str</span>,
+    station:     <span class="ty">&amp;'static str</span>,
+    focus:       <span class="ty">[&amp;'static str; 4]</span>,
+    disclosure:  <span class="ty">&amp;'static str</span>,
+    patent:      <span class="ty">&amp;'static str</span>,
+}
+
+<span class="kw">fn</span> <span class="fn">main</span>() {
+    <span class="kw">let</span> op = <span class="ty">SecurityPractitioner</span> {
+        name:       <span class="st">"Vishwash Tank"</span>,
+        handle:     <span class="st">"@Vola12do"</span>,
+        station:    <span class="st">"Rajasthan Police HQ (SP Cyber Crime, Jaipur)"</span>,
+        focus:      [<span class="st">"Web/API VAPT"</span>, <span class="st">"Android RE"</span>, <span class="st">"Python"</span>, <span class="st">"RF/IoT"</span>],
+        disclosure: <span class="st">"CERT-In Coordinated (CVSS v3.1: 10.0 Critical)"</span>,
+        patent:     <span class="st">"NoCTF — Containerized Labs-as-a-Service (GCP)"</span>,
+    };
+    <span class="fn">assert_eq!</span>(op.handle, <span class="st">"@Vola12do"</span>);
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi-cell">
+        <div class="kpi-label"><span>M01 // MAX SEVERITY</span><span>CERT-IN</span></div>
+        <div class="kpi-value accent">CVSS 10.0</div>
+        <div class="kpi-sub">Critical IDOR &amp; Broken Access Control</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label"><span>M02 // MOBILE CRYPTO</span><span>FLUTTER / APK</span></div>
+        <div class="kpi-value">AES-128</div>
+        <div class="kpi-sub">Hardcoded Key Extraction via Entropy</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label"><span>M03 // CLOUD PLATFORM</span><span>PATENT FILED</span></div>
+        <div class="kpi-value ok">NoCTF</div>
+        <div class="kpi-sub">Ephemeral Docker Labs on GCP</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label"><span>M04 // B.SC. COMP SCI</span><span>GUJARAT UNIV</span></div>
+        <div class="kpi-value">7.48 CGPA</div>
+        <div class="kpi-sub">First Class with Distinction (2023–2026)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       MODULE 02 // VULNERABILITY DISCOVERIES & ADVISORY HUD
+       ═════════════════════════════════════════════════════════════════════ -->
+  <section class="module-frame" id="vulns">
+    <div class="module-bar">
+      <span><span class="mod-code">VULN // 02</span> — VERIFIED VULNERABILITY DISCOVERIES &amp; ROOT-CAUSE LEDGER</span>
+      <span>SELECT AN ADVISORY TO INSPECT TECHNICAL TRACE</span>
+    </div>
+
+    <div class="section-head">
+      <h2>Disclosed Vulnerabilities &amp; High-Impact Findings</h2>
+      <p>Click any advisory row on the left to inspect its CVSS v3.1 vector, OWASP classification, exploitation trace, and engineered remediation.</p>
+    </div>
+
+    <div class="vuln-explorer">
+      <div class="vuln-list" role="tablist" aria-label="Vulnerability findings">
+        <button type="button" class="vuln-item active">
+          <div class="vuln-item-top">
+            <span>[01] // CERT-IN DISCLOSURE</span>
+            <span class="severity-badge">CVSS 10.0 CRITICAL</span>
+          </div>
+          <strong>Critical IDOR &amp; Broken Access Control</strong>
+          <small>Unauthorized cross-tenant data access in enterprise web app</small>
+        </button>
+
+        <button type="button" class="vuln-item">
+          <div class="vuln-item-top">
+            <span>[02] // MOBILE BYTECODE RE</span>
+            <span class="severity-badge">HIGH</span>
+          </div>
+          <strong>Hardcoded AES-128-GCM Cryptographic Keys</strong>
+          <small>Static symmetric keys extracted via Shannon entropy analysis</small>
+        </button>
+
+        <button type="button" class="vuln-item">
+          <div class="vuln-item-top">
+            <span>[03] // OWASP API1:2023</span>
+            <span class="severity-badge">HIGH</span>
+          </div>
+          <strong>Broken Object Level Authorization (BOLA)</strong>
+          <small>Cross-account REST endpoint manipulation via HTTP Toolkit</small>
+        </button>
+
+        <button type="button" class="vuln-item">
+          <div class="vuln-item-top">
+            <span>[04] // MASVS-STORAGE-1</span>
+            <span class="severity-badge high">MEDIUM-HIGH</span>
+          </div>
+          <strong>Insecure Cleartext Local Data Storage</strong>
+          <small>Unencrypted bearer tokens &amp; session state in mobile storage</small>
+        </button>
+
+        <button type="button" class="vuln-item">
+          <div class="vuln-item-top">
+            <span>[05] // OWASP API5:2023</span>
+            <span class="severity-badge">HIGH</span>
+          </div>
+          <strong>Vertical Privilege Escalation</strong>
+          <small>Role validation bypass enabling administrative execution</small>
+        </button>
+      </div>
+
+      <div class="vuln-detail-pane">
+        <div>
+          <div class="vuln-detail-head">
+            <div id="vd-id" class="eyebrow">VULN-01 // CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N</div>
+            <h3 id="vd-title">Critical IDOR &amp; Authorization Bypass in Enterprise Web Application</h3>
+          </div>
+
+          <div class="vuln-meta-grid" style="margin: 18px 0;">
+            <div>
+              <span>Severity Rating</span>
+              <strong id="vd-cvss">CVSS v3.1: 10.0 (CRITICAL)</strong>
+            </div>
+            <div>
+              <span>Disclosure Channel</span>
+              <strong id="vd-disc">Coordinated via CERT-In</strong>
+            </div>
+            <div>
+              <span>Vector / Class</span>
+              <strong id="vd-cat">OWASP API1:2023 / Broken Access Control</strong>
+            </div>
+          </div>
+
+          <p id="vd-summary" style="font-size: 14.5px; color: var(--text-sub); margin-bottom: 18px;">
+            Identified a critical authorization bypass across multi-tenant REST API endpoints where object identifiers were evaluated without binding the session bearer token to the owning tenant hierarchy.
+          </p>
+        </div>
+
+        <div id="vd-trace" class="vuln-trace-box"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       MODULE 03 // FIELD OPERATIONS & PROFESSIONAL EXPERIENCE
+       ═════════════════════════════════════════════════════════════════════ -->
+  <section class="module-frame" id="experience">
+    <div class="module-bar">
+      <span><span class="mod-code">OPS // 03</span> — FIELD DEPLOYMENTS &amp; RESEARCH APPOINTMENTS</span>
+      <span>VERIFIED CHRONOLOGY: 2024 – PRESENT</span>
+    </div>
+
+    <div class="section-head">
+      <h2>Operational Experience</h2>
+      <p>Law-enforcement cybercrime triage, university forensic hardware engineering, and hands-on offensive security instruction.</p>
+    </div>
+
+    <div class="exp-grid">
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-period">MAY 2026 – PRESENT</span>
+          <div class="exp-org">Rajasthan Police Headquarters</div>
+          <div class="exp-loc">SP Cyber Crime · Lal Kothi, Jaipur, Rajasthan</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Cyber Crime Intern</div>
+          <ul class="exp-bullets">
+            <li>Conducted authorized <strong>VAPT on internal web applications and REST APIs</strong> — evaluating authentication bypass, IDOR, and broken access controls against the <strong>OWASP API Security Top 10</strong>.</li>
+            <li>Reverse-engineered <strong>Flutter and Android applications</strong> with <strong>MobSF, JADX, and APKTool</strong>; identified hardcoded <strong>AES-128-GCM keys</strong> and cleartext storage via entropy analysis, and contributed to deterministic batch APK forensic workflows (<strong>PEAK</strong>).</li>
+            <li>Intercepted mobile API traffic using <strong>HTTP Toolkit and Burp Suite</strong>; mapped endpoints systematically and validated authorization failures across user roles.</li>
+            <li>Documented a <strong>critical IDOR vulnerability (CVSS v3.1: 10.0)</strong> in an enterprise web application, prepared full remediation documentation, and coordinated responsible disclosure via <strong>CERT-In</strong>.</li>
+            <li>Built <strong>Python automation scripts</strong> for parameter fuzzing, endpoint discovery, and log correlation — accelerating API attack surface enumeration and forensic triage.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-period">DEC 2025 – APR 2026</span>
+          <div class="exp-org">Vikram Dental Care &amp; National Forensic Sciences University (NFSU)</div>
+          <div class="exp-loc">Gandhinagar, Gujarat</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Technical Project Associate</div>
+          <ul class="exp-bullets">
+            <li>Engineered the <strong>Smart Denture NFC Scanner</strong> — a forensic victim identification system embedding passive <strong>RFID/NFC micro-tags</strong> into dental prosthetics for mass-disaster identification.</li>
+            <li>Programmed <strong>Arduino microcontrollers with RC522 modules</strong> to audit <strong>NTAG213 tags</strong>; characterized read/write thresholds, data retention under thermal stress, and forensic recovery durability.</li>
+            <li>Collaborated with <strong>NFSU forensic faculty</strong> to design tag memory mapping and ensure cryptographic compliance with forensic evidence admissibility standards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-period">AUG 2024 – FEB 2025</span>
+          <div class="exp-org">Cyber Octet Pvt. Ltd.</div>
+          <div class="exp-loc">Ahmedabad, Gujarat</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Junior Cybersecurity Trainer</div>
+          <ul class="exp-bullets">
+            <li>Delivered instructor-led training on practical web application security, packet-level network traffic analysis with <strong>Wireshark</strong>, and automated reconnaissance using <strong>Nmap</strong>.</li>
+            <li>Built reproducible <strong>CTF lab environments</strong> demonstrating <strong>OWASP Top 10</strong> vulnerabilities; authored comprehensive technical walk-throughs and student grading rubrics.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       MODULE 04 // ENGINEERED SYSTEMS & HARDWARE RACK
+       ═════════════════════════════════════════════════════════════════════ -->
+  <section class="module-frame" id="projects">
+    <div class="module-bar">
+      <span><span class="mod-code">PROJ // 04</span> — ENGINEERED PLATFORMS, SIEM TELEMETRY &amp; RF HARDWARE</span>
+      <span>8 PRODUCTION &amp; LAB UNITS</span>
+    </div>
+
+    <div class="section-head">
+      <h2>Selected Projects &amp; Hardware Builds</h2>
+      <p>Every system below was built from scratch — spanning cloud-native ephemeral CTF infrastructure, Android forensic engines, SIEM pipelines, and 2.4 GHz RF/HID hardware.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 01 // CLOUD INFRASTRUCTURE</span>
+            <span class="proj-badge patent">PATENT FILED</span>
+          </div>
+          <h3 class="proj-title">NoCTF — Labs-as-a-Service</h3>
+          <p class="proj-desc">
+            Self-built offensive security training platform provisioning isolated ephemeral lab environments on demand. Engineered with a Google Cloud Platform (GCP) backend, Docker-containerized target labs, automated lifecycle teardown, and Supabase authentication.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>GCP</span><span>Docker</span><span>Supabase</span><span>Python</span>
+          </div>
+          <a href="https://vishwash-tank.netlify.app" target="_blank" rel="noopener noreferrer" class="proj-link">INSPECT SYSTEM &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 02 // MOBILE FORENSICS &amp; CLOUD</span>
+            <span class="proj-badge">LAW ENFORCEMENT LAB</span>
+          </div>
+          <h3 class="proj-title">PEAK — Android APK Forensic Platform</h3>
+          <p class="proj-desc">
+            Deterministic static and dynamic Android APK intelligence engine combining multi-worker JADX decompilation, `.hprof` heap graph parsing, DEX carving, Firebase bucket auditing, and 3-bay physical/headless AOSP dynamic execution.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Python</span><span>JADX</span><span>ART HPROF</span><span>GCP Batch</span>
+          </div>
+          <a href="blog/android-apk-entropy-and-hprof-forensics/" class="proj-link">READ ARCHITECTURE &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 03 // HOST TELEMETRY</span>
+            <span class="proj-badge">PYTHON DAEMON</span>
+          </div>
+          <h3 class="proj-title">SOARX Security Dashboard</h3>
+          <p class="proj-desc">
+            Real-time security telemetry and server health monitoring dashboard built in Python. Aggregates host CPU/memory metrics, active daemon states, open socket tables, and threshold alerts for lightweight production lab setups.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Python</span><span>Telemetry</span><span>Linux Daemons</span><span>Alerting</span>
+          </div>
+          <a href="https://github.com/Vola12do/LaptopSecurityDashboard" target="_blank" rel="noopener noreferrer" class="proj-link">GITHUB REPO &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 04 // RF &amp; 802.11 AUDIT</span>
+            <span class="proj-badge">ESP8266 C++ FIRMWARE</span>
+          </div>
+          <h3 class="proj-title">WiFi Attack Toolkit (ESP8266)</h3>
+          <p class="proj-desc">
+            Custom C++ firmware for ESP8266 microcontrollers investigating 802.11 management frame vulnerabilities — deauthentication frame injection, beacon flooding, and client probe request logging inside controlled RF enclosures.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>C++</span><span>ESP8266</span><span>802.11 Frames</span><span>RF Lab</span>
+          </div>
+          <a href="https://github.com/Vola12do/IoT-WiFi-Attack-Tools-ESP8266-Deauther" target="_blank" rel="noopener noreferrer" class="proj-link">GITHUB REPO &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 05 // 2.4 GHZ &amp; BLE PROTOCOL</span>
+            <span class="proj-badge">ESP32 + NRF24L01</span>
+          </div>
+          <h3 class="proj-title">BLE Attack &amp; Audit Device</h3>
+          <p class="proj-desc">
+            Dual-radio embedded hardware tool auditing Bluetooth Low Energy and 2.4 GHz wireless protocols. Implements BLE advertisement spoofing, GATT service/characteristic enumeration, and RF spectrum stress testing on IoT peripherals.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>ESP32</span><span>nRF24L01</span><span>BLE GATT</span><span>IoT Sec</span>
+          </div>
+          <a href="https://github.com/Vola12do/BLE_Jammer_Using_ESP32_And_Nrf24l01_" target="_blank" rel="noopener noreferrer" class="proj-link">GITHUB REPO &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 06 // PHYSICAL ACCESS &amp; HID</span>
+            <span class="proj-badge">ARDUINO MICRO</span>
+          </div>
+          <h3 class="proj-title">Rubber Ducky USB Automation Suite</h3>
+          <p class="proj-desc">
+            Keystroke injection payload suite utilizing USB HID emulation on Arduino microcontrollers to assess physical workstation defenses — automated triage droppers, endpoint telemetry collectors, and persistence verification.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Arduino</span><span>USB HID</span><span>DuckyScript</span><span>Red Team</span>
+          </div>
+          <a href="https://github.com/Vola12do/IoT-Rubber-Ducky-Using-Arduino-Micro-Controller" target="_blank" rel="noopener noreferrer" class="proj-link">GITHUB REPO &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 07 // THREAT INTELLIGENCE</span>
+            <span class="proj-badge">OSINT / GTD</span>
+          </div>
+          <h3 class="proj-title">Global Terrorism Database (GTD) Intel Platform</h3>
+          <p class="proj-desc">
+            Interactive threat intelligence visualization platform analyzing transnational and domestic incident telemetry from 1970–2021 across geospatial vectors, attack modalities, and attribution clusters.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Threat Intel</span><span>Data Visualization</span><span>Geospatial</span>
+          </div>
+          <a href="https://github.com/Vola12do/gtd-dashboard" target="_blank" rel="noopener noreferrer" class="proj-link">GITHUB REPO &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div>
+          <div class="proj-top">
+            <span>UNIT 08 // DETECTION ENGINEERING</span>
+            <span class="proj-badge">ELK + SURICATA</span>
+          </div>
+          <h3 class="proj-title">SIEM Deployment &amp; Hardware Lab</h3>
+          <p class="proj-desc">
+            Centralized logging infrastructure built on Elasticsearch, Logstash, and Kibana with Linux `auditd` syscall ingestion, Windows Event Forwarding, and Suricata IDS alert pipelines alongside the hardware pentesting lab.
+          </p>
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Elastic Stack</span><span>Suricata IDS</span><span>auditd</span><span>SIEM</span>
+          </div>
+          <a href="https://github.com/Vola12do/My_IoT_-_Hardware_Based_Pentesting_Lab" target="_blank" rel="noopener noreferrer" class="proj-link">GITHUB REPO &#8599;</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       MODULE 05 // TECHNICAL ARSENAL & CORE COMPETENCIES
+       ═════════════════════════════════════════════════════════════════════ -->
+  <section class="module-frame" id="skills">
+    <div class="module-bar">
+      <span><span class="mod-code">SPEC // 05</span> — TECHNICAL ARSENAL &amp; CORE COMPETENCY MATRIX</span>
+      <span>6 OPERATIONAL DOMAINS</span>
+    </div>
+
+    <div class="skills-matrix">
+      <div class="skill-bay">
+        <div class="skill-bay-head">BAY 01 // APPLICATION SECURITY</div>
+        <h3>Web, API &amp; Mobile VAPT</h3>
+        <div class="skill-chips">
+          <span class="skill-chip">OWASP Top 10</span>
+          <span class="skill-chip">OWASP API Top 10</span>
+          <span class="skill-chip">OWASP MASVS</span>
+          <span class="skill-chip">IDOR &amp; BOLA</span>
+          <span class="skill-chip">Access Control</span>
+          <span class="skill-chip">Threat Modeling</span>
+          <span class="skill-chip">Secure SDLC</span>
+          <span class="skill-chip">CVSS v3.1</span>
+        </div>
+      </div>
+
+      <div class="skill-bay">
+        <div class="skill-bay-head">BAY 02 // OFFENSIVE &amp; RE TOOLS</div>
+        <h3>Interception &amp; Decompilation</h3>
+        <div class="skill-chips">
+          <span class="skill-chip">Burp Suite Pro</span>
+          <span class="skill-chip">OWASP ZAP</span>
+          <span class="skill-chip">HTTP Toolkit</span>
+          <span class="skill-chip">Postman</span>
+          <span class="skill-chip">MobSF</span>
+          <span class="skill-chip">JADX</span>
+          <span class="skill-chip">APKTool</span>
+          <span class="skill-chip">Wireshark</span>
+          <span class="skill-chip">Nmap</span>
+        </div>
+      </div>
+
+      <div class="skill-bay">
+        <div class="skill-bay-head">BAY 03 // SIEM &amp; CLOUD INFRA</div>
+        <h3>Detection &amp; Container Ops</h3>
+        <div class="skill-chips">
+          <span class="skill-chip">Splunk</span>
+          <span class="skill-chip">Elastic Stack (ELK)</span>
+          <span class="skill-chip">Suricata IDS</span>
+          <span class="skill-chip">Linux auditd</span>
+          <span class="skill-chip">Google Cloud (GCP)</span>
+          <span class="skill-chip">Docker</span>
+          <span class="skill-chip">Linux Server Admin</span>
+          <span class="skill-chip">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-bay">
+        <div class="skill-bay-head">BAY 04 // PROGRAMMING</div>
+        <h3>Automation &amp; Packet Code</h3>
+        <div class="skill-chips">
+          <span class="skill-chip">Python 3</span>
+          <span class="skill-chip">Scapy</span>
+          <span class="skill-chip">PyShark</span>
+          <span class="skill-chip">Raw Sockets</span>
+          <span class="skill-chip">Hashlib &amp; Crypto</span>
+          <span class="skill-chip">Multi-Threading</span>
+          <span class="skill-chip">C++ (OOP)</span>
+          <span class="skill-chip">Bash Scripting</span>
+          <span class="skill-chip">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-bay">
+        <div class="skill-bay-head">BAY 05 // IOT, RF &amp; HARDWARE</div>
+        <h3>Embedded &amp; Physical Security</h3>
+        <div class="skill-chips">
+          <span class="skill-chip">ESP32</span>
+          <span class="skill-chip">ESP8266</span>
+          <span class="skill-chip">Arduino</span>
+          <span class="skill-chip">nRF24L01 (2.4 GHz)</span>
+          <span class="skill-chip">BLE GATT Security</span>
+          <span class="skill-chip">NTAG213 RFID/NFC</span>
+          <span class="skill-chip">RC522</span>
+          <span class="skill-chip">Rubber Ducky HID</span>
+        </div>
+      </div>
+
+      <div class="skill-bay">
+        <div class="skill-bay-head">BAY 06 // FDE &amp; ADVISORY</div>
+        <h3>RCA, Disclosure &amp; Support</h3>
+        <div class="skill-chips">
+          <span class="skill-chip">CERT-In Disclosures</span>
+          <span class="skill-chip">Root-Cause Analysis</span>
+          <span class="skill-chip">API Troubleshooting</span>
+          <span class="skill-chip">Log Correlation</span>
+          <span class="skill-chip">Forward Deployed Sec</span>
+          <span class="skill-chip">Technical Writing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       MODULE 06 // INTERACTIVE FIELD CONSOLE TERMINAL
+       ═════════════════════════════════════════════════════════════════════ -->
+  <section class="module-frame" id="terminal">
+    <div class="module-bar">
+      <span><span class="mod-code">CLI // 06</span> — INTERACTIVE FIELD SHELL (vola12do@field-console:~$)</span>
+      <span>TYPE A COMMAND OR CLICK A QUICK-CHIP BELOW</span>
+    </div>
+
+    <div id="term-output" class="terminal-body">
+      <div class="term-line"><span class="term-prompt">vola12do@field-console:~$</span> whoami</div>
+      <div class="term-line">OPERATOR   : Vishwash Tank (@Vola12do)
+SPECIALTY  : Application Security, VAPT, API &amp; Mobile Forensics, Python &amp; RF Lab
+CURRENT OP : Cyber Crime Intern @ Rajasthan Police HQ (SP Cyber Crime, Jaipur)
+CERT-IN    : Critical IDOR Disclosure (CVSS v3.1: 10.0) | Patent Filed: NoCTF
+Type 'help' or click a command chip below to query the dossier.</div>
+    </div>
+
+    <div class="term-input-row">
+      <span class="term-prompt">vola12do@field-console:~$</span>
+      <input id="term-input" class="term-input" type="text" placeholder="Type help, vulns, projects, experience, skills, cv, contact, theme, clear..." aria-label="Terminal command input" />
+    </div>
+
+    <div class="term-quick-bar">
+      <button type="button" class="term-cmd-chip" data-cmd="help">help</button>
+      <button type="button" class="term-cmd-chip" data-cmd="whoami">whoami</button>
+      <button type="button" class="term-cmd-chip" data-cmd="vulns">vulns</button>
+      <button type="button" class="term-cmd-chip" data-cmd="experience">experience</button>
+      <button type="button" class="term-cmd-chip" data-cmd="projects">projects</button>
+      <button type="button" class="term-cmd-chip" data-cmd="skills">skills</button>
+      <button type="button" class="term-cmd-chip" data-cmd="contact">contact</button>
+      <button type="button" class="term-cmd-chip" data-cmd="cv">cv [open pdf]</button>
+      <button type="button" class="term-cmd-chip" data-cmd="theme">theme</button>
+      <button type="button" class="term-cmd-chip" data-cmd="clear">clear</button>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       MODULE 07 // EDUCATION, CERTIFICATIONS & DIRECT COMMS
+       ═════════════════════════════════════════════════════════════════════ -->
+  <section class="module-frame">
+    <div class="module-bar">
+      <span><span class="mod-code">CRED // 07</span> — ACADEMIC CREDENTIALS, CERTIFICATIONS &amp; DIRECT CHANNELS</span>
+      <span>VERIFIED RECORDS</span>
+    </div>
+
+    <div class="cred-grid">
+      <div class="cred-cell">
+        <small>EDUCATION // 2023 – 2026</small>
+        <h3>Bachelor of Computer Science (B.Sc.)</h3>
+        <p><strong>Gujarat University, Ahmedabad</strong><br />CGPA: <strong>7.48 / 10.0 · First Class with Distinction</strong></p>
+      </div>
+
+      <div class="cred-cell">
+        <small>CERTIFICATIONS &amp; WRITING</small>
+        <h3>Advance Diploma in Cyber Security</h3>
+        <p>Pursuing: <strong>eJPT (eLearnSecurity Junior Penetration Tester)</strong><br />Publishes vulnerability &amp; Android RE writeups on <a href="https://medium.com/@vishwashtank" target="_blank" rel="noopener noreferrer" style="color:var(--signal);text-decoration:underline;">Medium (@vishwashtank)</a> &amp; <a href="blog/" style="color:var(--signal);text-decoration:underline;">Field Blog</a>.</p>
+      </div>
+
+      <div class="cred-cell">
+        <small>DIRECT CHANNELS // LANGUAGES</small>
+        <h3>vishwashtank@gmail.com</h3>
+        <p>Phone: <strong>+91 82003 64523</strong> · Jaipur, Rajasthan<br />Languages: English (Pro) · Hindi (Native) · Gujarati (Native) · Italian (Learning)</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>VISHWASH TANK (@VOLA12DO) // INDUSTRIAL FIELD CONSOLE · ZERO AI-SLOP ARCHITECTURE</span>
+    <span>
+      <a href="https://github.com/Vola12do" target="_blank" rel="noopener noreferrer">GITHUB</a> &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/vishwash-tank-89308b28b" target="_blank" rel="noopener noreferrer">LINKEDIN</a> &nbsp;·&nbsp;
+      <a href="https://medium.com/@vishwashtank" target="_blank" rel="noopener noreferrer">MEDIUM</a> &nbsp;·&nbsp;
+      <a href="blog/">BLOG</a> &nbsp;·&nbsp;
+      <a href="assets/Vishwash_Tank_CV.pdf" target="_blank" rel="noopener noreferrer">CV.PDF</a>
+    </span>
+  </div>
+</footer>
+
+<div class="coord-hud" aria-hidden="true">
+  <span id="hud-coords">CURSOR // X:0000 Y:0000</span>
+  <span id="hud-clock">JAIPUR, IN // IST (UTC+05:30)</span>
+</div>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
