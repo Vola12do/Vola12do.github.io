@@ -203,7 +203,36 @@ def render_blog_index(posts: List[Dict[str, Any]]) -> str:
           <span class="note-meta">Published {date_str} &mdash; Read full note &#8599;</span>
         </a>""")
 
-    joined = "\n".join(rows_html)
+    if rows_html:
+        joined = f"""    <div class="notes-list" style="margin-bottom:48px">\n{chr(10).join(rows_html)}\n    </div>"""
+    else:
+        joined = """    <div class="blog-empty-card" style="margin:28px 0 56px">
+      <div class="blog-empty-tape" aria-hidden="true"></div>
+      <svg class="blog-empty-doodle" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="28" r="8" fill="#ff5a36" stroke="#18181b" stroke-width="2" />
+        <circle cx="152" cy="34" r="6" fill="#f4b41a" stroke="#18181b" stroke-width="2" />
+        <circle cx="144" cy="92" r="5" fill="#1fa372" stroke="#18181b" stroke-width="2" />
+        <path d="M48 18 L48 26 M44 22 L52 22" stroke="#18181b" stroke-width="2" stroke-linecap="round" />
+        <path d="M132 16 L132 24 M128 20 L136 20" stroke="#18181b" stroke-width="2" stroke-linecap="round" />
+        <rect x="44" y="34" width="76" height="64" rx="5" fill="#fffdf8" stroke="#18181b" stroke-width="2.5" />
+        <path d="M40 44 H48 M40 56 H48 M40 68 H48 M40 80 H48" stroke="#18181b" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M58 50 Q 70 46 82 50 T 104 50" stroke="#3b6ef6" stroke-width="2.2" stroke-linecap="round" fill="none" />
+        <path d="M58 62 Q 72 59 88 62" stroke="#18181b" stroke-width="2" stroke-linecap="round" fill="none" />
+        <circle cx="74" cy="76" r="1.8" fill="#18181b" />
+        <circle cx="88" cy="76" r="1.8" fill="#18181b" />
+        <path d="M76 82 Q 81 86 86 82" stroke="#ff5a36" stroke-width="2.2" stroke-linecap="round" fill="none" />
+        <g transform="translate(116, 46) rotate(28)">
+          <rect x="0" y="0" width="11" height="42" rx="1.5" fill="#f4b41a" stroke="#18181b" stroke-width="2.2" />
+          <rect x="0" y="0" width="11" height="8" fill="#ff5a36" stroke="#18181b" stroke-width="2.2" />
+          <path d="M0 42 L5.5 52 L11 42 Z" fill="#ede6d6" stroke="#18181b" stroke-width="2.2" stroke-linejoin="round" />
+          <circle cx="5.5" cy="50" r="1.8" fill="#18181b" />
+        </g>
+      </svg>
+      <p class="blog-empty-hand">&#10022; fresh ink brewing... &#10022;</p>
+      <h2 class="blog-empty-title">will write soon<span class="cursor-blink"></span></h2>
+      <p class="blog-empty-sub">hand-written notes &amp; write-ups will drop here when they&rsquo;re ready &mdash; zero AI slop, only real notes.</p>
+      <a href="../index.html" class="retro-btn" style="margin-top:8px">&larr; back to portfolio</a>
+    </div>"""
     return f"""<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -225,17 +254,7 @@ def render_blog_index(posts: List[Dict[str, Any]]) -> str:
 <body>
 {build_nav("../")}
   <main class="wrapper">
-    <div class="blog-header-box">
-      <span class="blog-kicker">&#9998; Notes &amp; Write-ups</span>
-      <h1 class="blog-main-title">~/blog &amp; field_notes</h1>
-      <p class="blog-sub">
-        Practitioner write-ups on REST API testing, Android reverse engineering, and embedded NFC/RF hardware tinkering.
-      </p>
-    </div>
-
-    <div class="notes-list" style="margin-bottom:48px">
 {joined}
-    </div>
   </main>
 {build_footer("../")}
 </body>
